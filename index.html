@@ -1,157 +1,368 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJ JUNES | Press Kit</title>
 
-    <!-- Fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+:root{
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+--black:#0B0B0B;
+--graphite:#161616;
+--white:#F7F7F7;
+--gray:#BEBEBE;
+--champagne:#C6B18B;
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+}
 
-</head>
 
-<body>
+html{
+scroll-behavior:smooth;
+}
 
-<header>
 
-<nav class="navbar">
+body{
 
-<h3>DJ JUNES</h3>
+background-color:var(--black);
+color:var(--white);
+font-family:'Montserrat',sans-serif;
 
-<ul>
-<li><a href="#sobre">Sobre</a></li>
-<li><a href="#eventos">Eventos</a></li>
-<li><a href="#videos">Vídeos</a></li>
-<li><a href="#contato">Contato</a></li>
-</ul>
+}
 
-</nav>
 
-</header>
+section{
 
+padding:100px 10%;
 
-<section class="hero">
+}
 
-<div class="hero-text">
 
-<h1>DJ JUNES</h1>
+h1{
 
-<h2>HIP-HOP • RAP • OPEN FORMAT</h2>
+font-family:'Syne',sans-serif;
+font-size:6rem;
+line-height:1;
 
-<p>
-Experiências musicais para eventos culturais, sociais e corporativos.
-</p>
+}
 
-<p class="quote">
-Cada evento possui sua própria identidade sonora.
-</p>
 
-<div class="buttons">
+h2{
 
-<a href="#contato" class="btn-primary">
-CONTRATAÇÕES
-</a>
+font-family:'Space Grotesk',sans-serif;
+margin-bottom:25px;
+color:var(--champagne);
 
-<a href="#" class="btn-secondary">
-INSTAGRAM
-</a>
+}
 
-</div>
 
-</div>
+p{
 
+line-height:1.8;
 
-<div class="hero-image">
+}
 
-<img src="./hero-djjunes.png" alt="DJ JUNES">
 
-</div>
 
-</section>
+/* MENU */
 
+.navbar{
 
-<section id="sobre">
+position:fixed;
+top:0;
+width:100%;
 
-<h2>SOBRE O ARTISTA</h2>
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-<p>
-Adicione aqui a biografia do artista.
-</p>
+padding:25px 10%;
 
-</section>
+background-color:rgba(11,11,11,.90);
 
+backdrop-filter:blur(10px);
 
-<section>
+z-index:1000;
 
-<h2>MANIFESTO ARTÍSTICO</h2>
+}
 
-<p>
-Mais do que tocar músicas, cada set é pensado para criar experiências únicas e memoráveis.
-</p>
 
-</section>
+.navbar h3{
 
+font-family:'Syne',sans-serif;
 
-<section id="eventos">
+}
 
-<h2>EVENTOS</h2>
 
-<div class="cards">
+.navbar ul{
 
-<div class="card">Eventos Corporativos</div>
-<div class="card">Pocket Shows</div>
-<div class="card">Eventos Culturais</div>
-<div class="card">Eventos Privados</div>
-<div class="card">Festas Infantis</div>
-<div class="card">Lançamentos de Coleção</div>
+display:flex;
+gap:30px;
+list-style:none;
 
-</div>
+}
 
-</section>
 
+.navbar a{
 
-<section id="videos">
+color:white;
+text-decoration:none;
+transition:.3s;
 
-<h2>ÚLTIMO SET</h2>
+}
 
-<p>
-Em breve.
-</p>
 
-</section>
+.navbar a:hover{
 
+color:var(--champagne);
 
-<section id="contato">
+}
 
-<h2>CONTRATAÇÕES</h2>
 
-<p>WhatsApp</p>
-<p>E-mail</p>
-<p>Instagram</p>
 
-</section>
+/* HERO */
 
+.hero{
 
-<button id="topBtn">
-↑
-</button>
+padding-top:180px;
 
+min-height:100vh;
 
-<footer>
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-DJ JUNES © 2026
+gap:80px;
 
-</footer>
+}
 
 
-<script src="script.js"></script>
+.hero h2{
 
-</body>
-</html>
+margin-top:20px;
+
+}
+
+
+.quote{
+
+margin-top:20px;
+color:var(--gray);
+
+}
+
+
+.hero-image img{
+
+width:520px;
+max-width:100%;
+height:auto;
+
+filter:drop-shadow(0px 0px 45px rgba(198,177,139,.35));
+
+animation:floating 6s ease-in-out infinite;
+
+}
+
+
+
+/* BOTÕES */
+
+.buttons{
+
+margin-top:40px;
+
+}
+
+
+.btn-primary,
+.btn-secondary{
+
+padding:15px 30px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+
+.btn-primary{
+
+background-color:var(--champagne);
+color:black;
+margin-right:15px;
+
+}
+
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+.btn-secondary{
+
+border:1px solid white;
+color:white;
+
+}
+
+
+.btn-secondary:hover{
+
+background-color:white;
+color:black;
+
+}
+
+
+
+/* SEÇÕES */
+
+#sobre,
+#eventos,
+#videos,
+#contato{
+
+background-color:var(--graphite);
+
+border-radius:25px;
+
+margin-bottom:25px;
+
+}
+
+
+
+/* CARDS */
+
+.cards{
+
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+
+}
+
+
+.card{
+
+padding:20px 25px;
+
+background-color:#202020;
+
+border-radius:15px;
+
+transition:.3s;
+
+}
+
+
+.card:hover{
+
+background-color:var(--champagne);
+color:black;
+transform:translateY(-5px);
+
+}
+
+
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+padding:40px;
+color:var(--gray);
+
+}
+
+
+
+/* BOTÃO VOLTAR AO TOPO */
+
+#topBtn{
+
+position:fixed;
+
+right:25px;
+bottom:25px;
+
+width:55px;
+height:55px;
+
+border:none;
+border-radius:50%;
+
+background-color:var(--champagne);
+
+cursor:pointer;
+
+display:none;
+
+font-size:20px;
+
+box-shadow:0 0 20px rgba(198,177,139,.4);
+
+z-index:1000;
+
+}
+
+
+
+/* ANIMAÇÃO DA FOTO */
+
+@keyframes floating{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+h1{
+
+font-size:4rem;
+
+}
+
+.hero-image img{
+
+width:320px;
+
+}
+
+.navbar{
+
+flex-direction:column;
+gap:15px;
+
+}
+
+}
