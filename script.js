@@ -1,27 +1,40 @@
-// Scroll suave
+// Animação suave ao carregar a página
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+window.addEventListener("load", () => {
 
-anchor.addEventListener("click", function(e){
-
-e.preventDefault();
-
-document.querySelector(this.getAttribute("href")).scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-});
+document.body.classList.add("loaded");
 
 });
 
 
 
-// Fade ao carregar a página
+// Efeito de fade-in ao rolar a página
 
-window.onload = () =>{
+const sections = document.querySelectorAll("section");
 
-document.body.style.opacity = "1";
+const observer = new IntersectionObserver((entries) => {
 
-};
+entries.forEach((entry) => {
+
+if (entry.isIntersecting) {
+
+entry.target.style.opacity = "1";
+entry.target.style.transform = "translateY(0px)";
+
+}
+
+});
+
+});
+
+
+
+sections.forEach((section) => {
+
+section.style.opacity = "0";
+section.style.transform = "translateY(40px)";
+section.style.transition = "0.8s ease";
+
+observer.observe(section);
+
+});
